@@ -53,6 +53,24 @@ function agentpress_home_genesis_meta() {
 	}
 }
 
+/* Start addition of grid layout of featured props different from default */
+
+add_action( 'genesis_meta', 'home_genesis_meta' );
+
+function home_genesis_meta() {
+
+if ( is_active_sidebar( 'home-top' ) || is_active_sidebar( 'properties' ) || is_active_sidebar( 'home-bottom' ) ) {
+
+genesis_widget_area( 'properties', array(
+		'before' => '<div class="properties"><div class="wrap">',
+		'after'  => '</div></div>',
+	) );
+    }
+}
+
+/* End */
+
+
 function agentpress_body_class( $classes ) {
 
 		$classes[] = 'agentpress-pro-home';
