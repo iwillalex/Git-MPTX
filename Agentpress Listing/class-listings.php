@@ -2,7 +2,7 @@
 /**
  * This file contains the AgentPress_Listings class.
  */
-
+ 
 /**
  * This class handles the creation of the "Listings" post type, and creates a
  * UI to display the Listing-specific data on the admin screens.
@@ -25,18 +25,30 @@ class AgentPress_Listings {
 		
 		$this->property_details = apply_filters( 'agentpress_property_details', array(
 			'col1' => array( 
-			    __( 'Price:', 'agentpress-listings' )   => '_listing_price', 
-			    __( 'Address:', 'agentpress-listings' ) => '_listing_address', 
-			    __( 'City:', 'agentpress-listings' )    => '_listing_city', 
-			    __( 'State:', 'agentpress-listings' )   => '_listing_state', 
-			    __( 'ZIP:', 'agentpress-listings' )     => '_listing_zip' 
+			__( 'Use:', 'agentpress' )       		=> '_listing_use',
+        		__( 'Land Area:', 'agentpress' )       		=> '_listing_land',
+        		__( 'Frontage:', 'agentpress' )       		=> '_listing_frontage',
+        		__( 'Jurisdiction:', 'agentpress' )       	=> '_listing_jurisdiction',
+        		__( 'Zoning:', 'agentpress' )       		=> '_listing_zoning',
+        		__( 'Floodplain:', 'agentpress' )       	=> '_listing_floodplain',
+        		__( 'Topography:', 'agentpress' )       	=> '_listing_topography',
+        		__( 'Water:', 'agentpress' )       		=> '_listing_water',
+        		__( 'Wastewater:', 'agentpress' )       	=> '_listing_wastewater',
+        		__( 'Electric:', 'agentpress' )      		=> '_listing_electric',
+        		__( 'Natural Gas:', 'agentpress' )       	=> '_listing_naturalgas',
+        		__( 'Improvements:', 'agentpress' )       	=> '_listing_improvements',
+        		__( 'Lease Rate:', 'agentpress' )       	=> '_listing_leaserate',
+        		__( 'Available:', 'agentpress' )       		=> '_listing_available',
+        		__( 'Other:', 'agentpress' )    		=> '_listing_other', 
 			), 
 			'col2' => array( 
-			    __( 'MLS #:', 'agentpress-listings' )       => '_listing_mls', 
-			    __( 'Square Feet:', 'agentpress-listings' ) => '_listing_sqft', 
-			    __( 'Bedrooms:', 'agentpress-listings' )    => '_listing_bedrooms', 
-			    __( 'Bathrooms:', 'agentpress-listings' )   => '_listing_bathrooms', 
-			    __( 'Basement:', 'agentpress-listings' )    => '_listing_basement' 
+        		__( 'Price:', 'agentpress' )   => '_listing_price', 
+        		__( 'Address:', 'agentpress' ) => '_listing_address', 
+        		__( 'City:', 'agentpress' )    => '_listing_city', 
+        		__( 'State:', 'agentpress' )   => '_listing_state', 
+        		__( 'ZIP:', 'agentpress' )     => '_listing_zip',
+        		__( 'Contact:', 'agentpress' )   => '_listing_contact',
+        		__( 'Phone:', 'agentpress' )   => '_listing_phone', 
 			)
 		) );
 
@@ -69,18 +81,18 @@ class AgentPress_Listings {
 		$args = apply_filters( 'agentpress_listings_post_type_args',
 			array(
 				'labels' => array(
-					'name'               => __( 'Listings', 'agentpress-listings' ),
-					'singular_name'      => __( 'Listing', 'agentpress-listings' ),
-					'add_new'            => __( 'Add New', 'agentpress-listings' ),
-					'add_new_item'       => __( 'Add New Listing', 'agentpress-listings' ),
-					'edit'               => __( 'Edit', 'agentpress-listings' ),
-					'edit_item'          => __( 'Edit Listing', 'agentpress-listings' ),
-					'new_item'           => __( 'New Listing', 'agentpress-listings' ),
-					'view'               => __( 'View Listing', 'agentpress-listings' ),
-					'view_item'          => __( 'View Listing', 'agentpress-listings' ),
-					'search_items'       => __( 'Search Listings', 'agentpress-listings' ),
-					'not_found'          => __( 'No listings found', 'agentpress-listings' ),
-					'not_found_in_trash' => __( 'No listings found in Trash', 'agentpress-listings' )
+				'name'               => __( 'Properties', 'agentpress' ),
+				'singular_name'      => __( 'Property', 'agentpress' ),
+				'add_new'            => __( 'Add New', 'agentpress' ),
+				'add_new_item'       => __( 'Add New Property', 'agentpress' ),
+				'edit'               => __( 'Edit', 'agentpress' ),
+				'edit_item'          => __( 'Edit Property', 'agentpress' ),
+				'new_item'           => __( 'New Property', 'agentpress' ),
+				'view'               => __( 'View Property', 'agentpress' ),
+				'view_item'          => __( 'View Property', 'agentpress' ),
+				'search_items'       => __( 'Search Properties', 'agentpress' ),
+				'not_found'          => __( 'No Properties found', 'agentpress' ),
+				'not_found_in_trash' => __( 'No Properties found in Trash', 'agentpress' )
 				),
 				'public'        => true,
 				'query_var'     => true,
@@ -201,7 +213,9 @@ class AgentPress_Listings {
 				break;
 		}
 
-	}
+	}	
+
+	//* Start: Prevent empty Property Details items rendering to page (modified original)
 
 	function property_details_shortcode( $atts ) {
 
@@ -213,12 +227,25 @@ class AgentPress_Listings {
 
 		$output .= '<div class="property-details-col1 one-half first">';
 			foreach ( (array) $this->property_details['col1'] as $label => $key ) {
+			
+			
+			$details = get_post_meta($post->ID, $key, true);  //* Added to original
+				if ( !empty( $details ) ) {                   //* Added to original
+				
 				$output .= sprintf( '<b>%s</b> %s<br />', esc_html( $label ), esc_html( get_post_meta($post->ID, $key, true) ) );	
 			}
+		}
 		$output .= '</div><div class="property-details-col2 one-half">';
 			foreach ( (array) $this->property_details['col2'] as $label => $key ) {
+			
+			$details = get_post_meta($post->ID, $key, true);  //* Added to original
+				if ( !empty( $details ) ) {                   //* Added to original
+				
 				$output .= sprintf( '<b>%s</b> %s<br />', esc_html( $label ), esc_html( get_post_meta($post->ID, $key, true) ) );	
 			}
+		}
+	//* End
+		
 		$output .= '</div><div class="clear">';
 			$output .= sprintf( '<p><b>%s</b><br /> %s</p></div>', __( 'Additional Features:', 'agentpress-listings' ), get_the_term_list( $post->ID, 'features', '', ', ', '' ) );
 
