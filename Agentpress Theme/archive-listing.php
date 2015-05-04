@@ -2,7 +2,7 @@
 /**
  * This file adds the Archive Listings Template to the AgentPress Pro Theme.
  *
- * @author StudioPress
+ * @author biltrum
  * @package AgentPress Pro
  * @subpackage Customizations
  */
@@ -37,51 +37,30 @@ add_action( 'genesis_loop', 'agentpress_listing_archive_loop' );
 function agentpress_listing_archive_loop() {
 	
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	
+	    $listing_website = genesis_get_custom_field( '_listing_website' );
+		
+		$listing_address = genesis_get_custom_field( '_listing_address' );
 
-		$listing_price = genesis_get_custom_field( '_listing_price' );
-		$listing_text = genesis_get_custom_field( '_listing_text' );
-		$address = genesis_get_custom_field( '_listing_address' );
-		$city = genesis_get_custom_field( '_listing_city' );
-		$state = genesis_get_custom_field( '_listing_state' );
-		$zip = genesis_get_custom_field( '_listing_zip' );
+        $listing_price = genesis_get_custom_field( '_listing_price' );
+
 		
 		$loop = ''; // init
 		
 		$loop .= sprintf( '<a href="%s">%s</a>', get_permalink(), genesis_get_image( array( 'size' => 'properties' ) ) );
 		
-		if( $listing_price ) {
+		    if( $listing_website ) {
+			$loop .= sprintf( '<span class="listing-price">%s</span>', $listing_website );
+		    }
+			
+			if( $listing_address ) {
+			$loop .= sprintf( '<span class="listing-price">%s</span>', $listing_address );
+		    }
+
+            if( $listing_price ) {
 			$loop .= sprintf( '<span class="listing-price">%s</span>', $listing_price );
-		}
+		    }
 
-		if( $listing_text ) {
-			$loop .= sprintf( '<span class="listing-text">%s</span>', $listing_text );
-		}
-
-		if( $address ) {
-			$loop .= sprintf( '<span class="listing-address">%s</span>', $address );
-		}	
-		
-		if ( $city || $state || $zip ) {
-
-			//* count number of completed fields
-			$pass = count( array_filter( array( $city, $state, $zip ) ) );
-
-			//* If only 1 field filled out, no comma
-			if ( 1 == $pass ) {
-				$city_state_zip = $city . $state . $zip;
-			}
-			//* If city filled out, comma after city
-			elseif ( $city ) {
-				$city_state_zip = $city . ", " . $state . " " . $zip;
-			}
-			//* Otherwise, comma after state
-			else {
-				$city_state_zip = $city . " " . $state . ", " . $zip;
-			}
-
-			$loop .= sprintf( '<span class="listing-city-state-zip">%s</span>', trim( $city_state_zip ) );
-
-		}
 
 		$loop .= sprintf( '<a href="%s" class="more-link">%s</a>', get_permalink(), __( 'View Listing', 'agentpress' ) );
 
