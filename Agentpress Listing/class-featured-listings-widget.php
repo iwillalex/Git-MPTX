@@ -46,7 +46,7 @@ class AgentPress_Featured_Listings_Widget extends WP_Widget {
 
 				//* Pull all the listing information
 				$custom_text = genesis_get_custom_field( '_listing_text' );
-				$price       = genesis_get_custom_field( '_listing_price' );
+				/*--- $price       = genesis_get_custom_field( '_listing_price' ); ---*/
 				$address     = genesis_get_custom_field( '_listing_address' );
 				$city        = genesis_get_custom_field( '_listing_city' );
 				$state       = genesis_get_custom_field( '_listing_state' );
@@ -88,7 +88,7 @@ class AgentPress_Featured_Listings_Widget extends WP_Widget {
 
 				}
 
-				$loop .= sprintf( '<a href="%s" class="more-link">%s</a>', get_permalink(), __( 'View Listing', 'agentpress-listings' ) );
+				$loop .= sprintf( '<a href="%s" class="more-link">%s</a>', get_permalink(), __( 'VIEW PROPERTY', 'agentpress-listings' ) );
 
 				$toggle = $toggle == 'left' ? 'right' : 'left';
 
