@@ -72,18 +72,30 @@ add_filter( 'agentpress_property_details', 'agentpress_property_details_filter' 
 function agentpress_property_details_filter( $details ) {
 
     $details['col1'] = array( 
+     	__( 'Use:', 'agentpress' )       			=> '_listing_use',
+        __( 'Land Area:', 'agentpress' )       		=> '_listing_land',
+        __( 'Frontage:', 'agentpress' )       		=> '_listing_frontage',
+        __( 'Jurisdiction:', 'agentpress' )       	=> '_listing_jurisdiction',
+        __( 'Zoning:', 'agentpress' )       		=> '_listing_zoning',
+        __( 'Floodplain:', 'agentpress' )       	=> '_listing_floodplain',
+        __( 'Topography:', 'agentpress' )       	=> '_listing_topography',
+        __( 'Water:', 'agentpress' )       			=> '_listing_water',
+        __( 'Wastewater:', 'agentpress' )       	=> '_listing_wastewater',
+        __( 'Electric:', 'agentpress' )      		=> '_listing_electric',
+        __( 'Natural Gas:', 'agentpress' )       	=> '_listing_naturalgas',
+        __( 'Improvements:', 'agentpress' )       	=> '_listing_improvements',
+        __( 'Lease Rate:', 'agentpress' )       	=> '_listing_leaserate',
+        __( 'Available:', 'agentpress' )       		=> '_listing_available',
+        __( 'Other:', 'agentpress' )    			=> '_listing_other',
+    );
+     $details['col2'] = array( 
         __( 'Price:', 'agentpress' )   => '_listing_price', 
         __( 'Address:', 'agentpress' ) => '_listing_address', 
         __( 'City:', 'agentpress' )    => '_listing_city', 
         __( 'State:', 'agentpress' )   => '_listing_state', 
         __( 'ZIP:', 'agentpress' )     => '_listing_zip',
-    );
-    $details['col2'] = array( 
-        __( 'MLS #:', 'agentpress' )       => '_listing_mls', 
-        __( 'Square Feet:', 'agentpress' ) => '_listing_sqft', 
-        __( 'Bedrooms:', 'agentpress' )    => '_listing_bedrooms', 
-        __( 'Bathrooms:', 'agentpress' )   => '_listing_bathrooms', 
-        __( 'Basement:', 'agentpress' )    => '_listing_basement',
+        __( 'Contact:', 'agentpress' ) => '_listing_contact',
+        __( 'Phone:', 'agentpress' )   => '_listing_phone',
     );
 
     return $details;
@@ -96,7 +108,7 @@ add_action( 'genesis_before_header', 'genesis_do_nav' );
 
 //* Reposition the secondary navigation menu
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_footer', 'genesis_do_subnav', 7 );
+/*--- add_action( 'genesis_footer', 'genesis_do_subnav', 7 ); ---*/
 
 //* Reduce the secondary navigation menu to one level depth
 add_filter( 'wp_nav_menu_args', 'agentpress_secondary_menu_args' );
@@ -207,3 +219,29 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Disclaimer', 'agentpress' ),
 	'description' => __( 'This is the disclaimer section of the footer.', 'agentpress' ),
 ) );
+
+//* Add widget for custom grid layout for featured props
+genesis_register_sidebar( array(
+	'id'          => 'properties',
+	'name'        => __( 'Properties', 'genesis' ),
+	'description' => __( 'This is the featured section of the Home page.', 'genesis' ),
+) );
+
+//* Customize Breadcrumbs
+add_filter('genesis_breadcrumb_args', 'customize_breadcrumbs');
+function customize_breadcrumbs($args) {
+    $args['labels']['prefix'] = '';
+    $args['home'] = ' Front Page ';
+    $args['sep'] = ' • ';
+    return $args;
+}
+
+//* Add More-Link below Excerpt automatically
+function wpsites_hand_crafted_manual_excerpt( $excerpt ) {
+    if ( has_excerpt() && ! is_attachment() ) {
+  
+    $custom_excerpt = '<a class="more-link" href="' . get_permalink() . '">. . . Continue Reading</a>';
+    }
+    return $excerpt . $custom_excerpt;
+}
+add_filter( 'get_the_excerpt', 'wpsites_hand_crafted_manual_excerpt' );
