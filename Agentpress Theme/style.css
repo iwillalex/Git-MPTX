@@ -141,13 +141,20 @@ input[type="search"] {
 Defaults
 ---------------------------------------------------------------------------------------------------- */
 
+/* Turn off Page Titles
+--------------------------------------------------------- */
+
+.page-id-22 .entry-title {
+display: none;
+}
+
 /* Typographical Elements
 --------------------------------------------- */
 
 body {
 	background-color: #f5f5f5;
-	color: #1a212b;
-	font-family: 'Roboto', sans-serif;
+	color: #263844;
+	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 1.625;
@@ -161,11 +168,11 @@ input[type="reset"],
 input[type="submit"],
 textarea:focus,
 .button {
-	-webkit-transition: all 0.1s ease-in-out;
-	-moz-transition:    all 0.1s ease-in-out;
-	-ms-transition:     all 0.1s ease-in-out;
-	-o-transition:      all 0.1s ease-in-out;
-	transition:         all 0.1s ease-in-out;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition:    all 0.15s ease-in-out;
+	-ms-transition:     all 0.15s ease-in-out;
+	-o-transition:      all 0.15s ease-in-out;
+	transition:         all 0.15s ease-in-out;
 }
 
 ::-moz-selection {
@@ -179,12 +186,12 @@ textarea:focus,
 }
 
 a {
-	color: #d23836;
+	color: #0274be;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #1a212b;
+	color: #263844;
 }
 
 p {
@@ -396,7 +403,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #d23836;
+	background-color: #0274be;
 	border: none;
 	color: #fff;
 	cursor: pointer;
@@ -415,7 +422,7 @@ input:hover[type="submit"],
 .button:hover,
 .widget-area .widget .button:hover {
 	background-color: #e9e9e9;
-	color: #1a212b;
+	color: #263844;
 }
 
 .widget-area .widget .button {
@@ -652,9 +659,9 @@ Common Classes
 --------------------------------------------- */
 
 .breadcrumb {
-	background-color: #d23836;
+	background-color: #0274be;
 	color: #fff;
-	font-size: 12px;
+	font-size: 14px;
 	margin: -40px 0 40px;
 	padding: 10px 40px;
 }
@@ -664,7 +671,7 @@ Common Classes
 }
 
 .site-inner .breadcrumb a:hover {
-	color: #1a212b;
+	color: #263844;
 }
 
 .archive-description,
@@ -726,12 +733,12 @@ Common Classes
 
 .entry-title a,
 .featured-content .entry .entry-title a {
-	color: #1a212b;
+	color: #263844;
 }
 
 .entry-title a:hover,
 .featured-content .entry .entry-title a:hover {
-	color: #d23836;
+	color: #0274be;
 }
 
 .widget-title {
@@ -742,14 +749,14 @@ Common Classes
 .full-width .widget-title,
 .property-search .widget-title,
 .sidebar .widget-title {
-	background-color: #d23836;
+	background-color: #0274be;
 	color: #fff;
 	font-weight: 700;
 	padding: 20px 40px;
 }
 
 .full-width .widget-title {
-	background-color: #1a212b;
+	background-color: #263844;
 }
 
 .sidebar .widget-title {
@@ -769,8 +776,8 @@ Common Classes
 
 .home-featured .widget.widget_text .widget-title {
 	background: none;
-	color: #d23836;
-	font-size: 48px;
+	color: #0274be;
+	font-size: 36px;
 	line-height: 1.1;
 	padding: 0;
 }
@@ -925,7 +932,7 @@ Plugins
 --------------------------------------------- */
 
 .widget-area .widget.property-search {
-	background-color: #1a212b;
+	background-color: #263844;
 	padding: 40px;
 }
 
@@ -943,7 +950,7 @@ Plugins
 }
 
 .featured-listings .listing {
-	color: #1a212b;
+	color: #263844;
 	margin: 0 auto;
 	max-width: 500px;
 	overflow: hidden;
@@ -959,11 +966,11 @@ Plugins
 }
 
 .listing-text {
-	-moz-transform:    rotate(45deg);
-	-ms-transform:     rotate(45deg);
-	-o-transform:      rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	background-color: #d23836;
+	-moz-transform:    rotate(0deg);
+	-ms-transform:     rotate(0deg);
+	-o-transform:      rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	background-color: #0274be;
 	color: #fff;
 	font-size: 9px;
 	font-weight: 700;
@@ -988,22 +995,31 @@ Plugins
 }
 
 .featured-listings .listing a.more-link {
-	color: #d23836;
+	background-color: #0274be;
+	color: #ffffff;
 }
 
 .featured-listings .listing a.more-link:hover {
-	color: #1a212b;
+	background-color: #263844;
+	color: #ffffff;
 }
 
 .property-details {
 	margin-bottom: 28px;
 }
 
+a.more-link {
+    display: block;
+    text-align: left;
+    margin-top: 1.25em;
+    width: 30%;
+}
+
 /* Genesis eNews Extended
 --------------------------------------------- */
 
 .widget-area .widget.enews-widget {
-	background-color: #1a212b;
+	background-color: #263844;
 	color: #fff;
 	padding: 40px;
 }
@@ -1035,8 +1051,17 @@ Plugins
 Site Header
 ---------------------------------------------------------------------------------------------------- */
 
+/* for 100% of page width header */
+/*
 .site-header .wrap {
-	background-color: #1a212b;
+	background-color: #263844;
+	color: #fff;
+}
+*/
+
+/* For full-width header */
+.site-header {
+	background-color: #263844;
 	color: #fff;
 }
 
@@ -1044,7 +1069,7 @@ Site Header
 --------------------------------------------- */
 
 .title-area {
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: #263844;
 	float: left;
 	padding: 20px 40px;
 	max-width: 320px;
@@ -1052,7 +1077,7 @@ Site Header
 
 .header-image .title-area {
 	width: 320px;
-	padding: 0;
+	padding: 10px;
 }
 
 .header-full-width .title-area {
@@ -1143,17 +1168,19 @@ Site Navigation
 }
 
 .genesis-nav-menu a {
-	color: #1a212b;
+	color: #263844;
 	display: block;
 	padding: 20px 24px;
 }
+
+/* Change color of background on current page */
 
 .genesis-nav-menu > li.menu-item-has-children:hover > a,
 .genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	background-color: #fff;
-	color: #1a212b;
+	background-color: #263844;
+	color: #ffffff;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -1203,7 +1230,7 @@ Site Navigation
 }
 
 .genesis-nav-menu > .right {
-	color: #1a212b;
+	color: #263844;
 	float: right;
 	list-style-type: none;
 	padding: 0;
@@ -1232,14 +1259,17 @@ Site Navigation
 	border-left: 1px solid rgba(255, 255, 255, 0.1);
 	color: #fff;
 	font-size: 16px;
-	padding: 32px 24px;
+	font-weight: 600;
+	padding: 40px 24px;
 }
+
+/* Change color of text on current page. */
 
 .site-header .genesis-nav-menu .current-menu-item > a,
 .site-header .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .site-header .genesis-nav-menu .sub-menu a,
 .site-header .genesis-nav-menu a:hover {
-	color: #1a212b;
+	color: #abbbc6;
 }
 
 .site-header .genesis-nav-menu .sub-menu a {
@@ -1275,7 +1305,7 @@ Site Navigation
 .nav-secondary .genesis-nav-menu > li:hover > a,
 .nav-secondary .genesis-nav-menu a:hover {
 	background: none;
-	color: #d23836;
+	color: #0274be;
 }
 
 /* Responsive Menu
@@ -1368,7 +1398,7 @@ Content Area
 .full-width .featuredpage,
 .full-width .featuredpost .entry {
 	background-color: #fff;
-	color: #1a212b;
+	color: #263844;
 	float: left;
 	margin: 0 0 1.5% 1.5%;
 	overflow: hidden;
@@ -1422,7 +1452,7 @@ Content Area
 }
 
 .full-width .featured-content .more-from-category a {
-	background-color: #d23836;
+	background-color: #0274be;
 	color: #fff;
 	clear: both;
 	display: block;
@@ -1431,12 +1461,12 @@ Content Area
 }
 
 .home-middle-1 .featured-content .more-from-category a {
-	background-color: #1a212b;
+	background-color: #263844;
 }
 
 .full-width .featured-content p.more-from-category a:hover {
 	background-color: #fff;
-	color: #1a212b;
+	color: #263844;
 }
 
 .featured-listings,
@@ -1455,7 +1485,7 @@ Content Area
 }
 
 .home-middle-1.widget-area .widget {
-	background-color: #d23836;
+	background-color: #fff;
 	padding: 40px;
 }
 
@@ -1479,11 +1509,11 @@ Content Area
 }
 
 .home-middle-1 .entry a {
-	color: #d23836;
+	color: #0274be;
 }
 
 .home-middle-1 .entry a:hover {
-	color: #1a212b;	
+	color: #263844;	
 }
 
 .home-middle .home-middle-1 button,
@@ -1492,7 +1522,7 @@ Content Area
 .home-middle .home-middle-1 input[type="submit"],
 .home-middle .home-middle-1 .widget .button {
 	background-color: #fff;
-	color: #1a212b;
+	color: #263844;
 }
 
 .home-middle .home-middle-1 button:hover,
@@ -1500,7 +1530,7 @@ Content Area
 .home-middle .home-middle-1 input:hover[type="reset"],
 .home-middle .home-middle-1 input:hover[type="submit"],
 .home-middle .home-middle-1 .widget .button:hover {
-	background-color: #1a212b;
+	background-color: #263844;
 	color: #fff;
 }
 
@@ -1584,7 +1614,7 @@ p.entry-meta a {
 }
 
 .entry-meta a:hover {
-    color: #1a212b;
+    color: #263844;
 }
 
 .entry-header .entry-meta {
@@ -1605,7 +1635,7 @@ p.entry-meta a {
 --------------------------------------------- */
 
 .after-entry {
-	background-color: #1a212b;
+	background-color: #263844;
 	color: #fff;
 	margin-bottom: 40px;
 	text-align: center;
@@ -1648,7 +1678,7 @@ p.entry-meta a {
 
 .archive-pagination li a {
 	background-color: #fff;
-	color: #1a212b;
+	color: #263844;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
@@ -1657,7 +1687,7 @@ p.entry-meta a {
 
 .archive-pagination li a:hover,
 .archive-pagination .active a {
-	background-color: #1a212b;
+	background-color: #263844;
 	color: #fff;
 }
 
@@ -1772,11 +1802,11 @@ Footer Widgets
 }
 
 .footer-widgets a {
-	color: #1a212b;
+	color: #263844;
 }
 
 .footer-widgets a:hover {
-	color: #d23836;
+	color: #0274be;
 }
 
 .footer-widgets li {
@@ -1812,11 +1842,11 @@ Site Footer
 }
 
 .site-footer a {
-	color: #1a212b;
+	color: #263844;
 }
 
 .site-footer a:hover {
-	color: #d23836;
+	color: #0274be;
 }
 
 .site-footer p {
@@ -1859,7 +1889,7 @@ Theme Colors
 .agentpress-pro-blue input:hover[type="reset"],
 .agentpress-pro-blue input:hover[type="submit"],
 .agentpress-pro-blue {
-	color: #263844;
+	color: #1a212b;
 }
 
 
@@ -1874,7 +1904,7 @@ Theme Colors
 .agentpress-pro-blue .nav-secondary .genesis-nav-menu a:hover,
 .agentpress-pro-blue .site-footer a:hover,
 .agentpress-pro-blue a {
-	color: #0274be;
+	color: #d23836;
 }
 
 .agentpress-pro-blue .after-entry,
@@ -1890,14 +1920,14 @@ Theme Colors
 .agentpress-pro-blue .site-header .wrap,
 .agentpress-pro-blue .widget.enews-widget,
 .agentpress-pro-blue .widget.property-search {
-	background-color: #263844;
+	background-color: #1a212b;
 }
 
 .agentpress-pro-blue .breadcrumb,
 .agentpress-pro-blue .button,
 .agentpress-pro-blue .enews-widget .widget-title,
 .agentpress-pro-blue .full-width .more-from-category a,
-.agentpress-pro-blue .home-middle-1 .widget,
+/*--- .agentpress-pro-blue .home-middle-1 .widget, ---*/
 .agentpress-pro-blue .listing-text,
 .agentpress-pro-blue .property-search .widget-title,
 .agentpress-pro-blue .sidebar .widget-title,
@@ -1905,7 +1935,7 @@ Theme Colors
 .agentpress-pro-blue input[type="button"],
 .agentpress-pro-blue input[type="reset"],
 .agentpress-pro-blue input[type="submit"] {
-	background-color: #0274be;
+	background-color: #d23836;
 	color: #fff;
 }
 
@@ -2082,6 +2112,130 @@ Theme Colors
 .agentpress-pro-green input:hover[type="submit"] {
 	background-color: #e9e9e9;
 }
+
+
+/* Featured Property Grid Layout Widget. BDalton
+---------------------------------------------------------------------- */
+ 
+.properties .featured-listings .entry {
+	float: left;
+	margin-bottom: 0;
+	margin-right: 60px;
+	min-height: 140px;
+	text-align: center;
+	width: 320px;
+}
+
+.properties .featured-listings .entry:nth-of-type(3n+3) {
+	margin-right: 0;
+}
+
+.properties {
+	background-color: #F2F2F2;
+	padding: 30px 30px 0;
+	padding: 6rem 3rem 0;
+	min-height: 400px;
+}
+
+.properties .widget-title {
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.properties p {
+	padding: 0 0 15px;
+}
+
+.properties h2,
+.properties h2 a,
+.properties h2 a:visited {
+	font-family: 'Lato', arial, serif;
+	font-size: 14px;
+	line-height: 22px;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.widget-wrap .listing-wrap {
+	float: left;
+	font-size: 12px;
+	margin: 0 10px 15px;
+	position: relative;
+	width: 360px;
+}
+
+.listing-price {
+	background: #263844;
+	clear: both;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+	left: 5px;
+	padding: 10px;
+	position: absolute;
+	top: 35px;
+}
+
+.listing-text {
+	background: #0274be;
+	clear: both;
+	color: #ffffff;
+	font-size: 12px;
+	padding: 5px 10px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.listing-address,
+.listing-city-state-zip {
+	display: block;
+	font-size: 16px;
+	line-height: 16px;
+	margin: 0 0 5px;
+	padding: 0;
+	text-align: center;
+}
+
+.listing-city-state-zip {
+	margin: 0 0 10px;
+}
+
+.listing-wrap .more-link {
+	background-color: #0274be;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	margin: 0 auto;
+	padding: 5px 0;
+	text-align: center;
+	width: 120px;
+}
+
+.listing-wrap .more-link:hover {
+	background-color: #263844;
+	text-decoration: none;
+}
+
+
+.listing-wrap a img {
+	border: 1px solid #ddd;
+	margin: 0 0 5px;
+	padding: 4px;
+}
+
+.listing-wrap a img {
+	margin: 0 0 10px;
+}
+
+.listing-wrap a:hover img {
+	border: 1px solid #999;
+}
+
+/* End */
 
 
 /*
