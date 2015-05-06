@@ -49,6 +49,7 @@ class AgentPress_Listings {
         		__( 'ZIP:', 'agentpress' )     => '_listing_zip',
         		__( 'Contact:', 'agentpress' )   => '_listing_contact',
         		__( 'Phone:', 'agentpress' )   => '_listing_phone', 
+        		__( 'Additional Features:', 'agentpress' )   => '_listing_addtionalfeatures', 
 			)
 		) );
 
@@ -247,8 +248,8 @@ class AgentPress_Listings {
 	//* End
 		
 		$output .= '</div><div class="clear">';
-			$output .= sprintf( '<p><b>%s</b><br /> %s</p></div>', __( 'Additional Features:', 'agentpress-listings' ), get_the_term_list( $post->ID, 'features', '', ', ', '' ) );
-
+		/*	$output .= sprintf( '<p><b>%s</b><br /> %s</p></div>', __( 'Additional Features:', 'agentpress-listings' ), get_the_term_list( $post->ID, 'features', '', ', ', '' ) ); */  //*** commented out 5-6-15 to prevent rendering to page.
+		
 		$output .= '</div>';
 
 		return $output;
@@ -297,7 +298,7 @@ class AgentPress_Listings {
 
 		array_pop( $crumbs );
 
-		$crumbs[] = __( 'Listing Search Results', 'agentpress-listings' );
+		$crumbs[] = __( 'Property Search Results', 'agentpress-listings' );
 
 		return $crumbs;
 

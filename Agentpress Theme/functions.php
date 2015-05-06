@@ -96,6 +96,7 @@ function agentpress_property_details_filter( $details ) {
         __( 'ZIP:', 'agentpress' )     => '_listing_zip',
         __( 'Contact:', 'agentpress' ) => '_listing_contact',
         __( 'Phone:', 'agentpress' )   => '_listing_phone',
+        __( 'Additional Features:', 'agentpress' )   => '_listing_addtionalfeatures',
     );
 
     return $details;
