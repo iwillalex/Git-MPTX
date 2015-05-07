@@ -25,21 +25,24 @@ class AgentPress_Listings {
 		
 		$this->property_details = apply_filters( 'agentpress_property_details', array(
 			'col1' => array( 
-			__( 'Use:', 'agentpress' )       		=> '_listing_use',
+     			__( 'Use:', 'agentpress' )       			=> '_listing_use',
         		__( 'Land Area:', 'agentpress' )       		=> '_listing_land',
+        		__( 'Unit Size:', 'agentpress' )       		=> '_listing_unitsize',
         		__( 'Frontage:', 'agentpress' )       		=> '_listing_frontage',
         		__( 'Jurisdiction:', 'agentpress' )       	=> '_listing_jurisdiction',
         		__( 'Zoning:', 'agentpress' )       		=> '_listing_zoning',
         		__( 'Floodplain:', 'agentpress' )       	=> '_listing_floodplain',
         		__( 'Topography:', 'agentpress' )       	=> '_listing_topography',
-        		__( 'Water:', 'agentpress' )       		=> '_listing_water',
+        		__( 'Water:', 'agentpress' )       			=> '_listing_water',
         		__( 'Wastewater:', 'agentpress' )       	=> '_listing_wastewater',
         		__( 'Electric:', 'agentpress' )      		=> '_listing_electric',
         		__( 'Natural Gas:', 'agentpress' )       	=> '_listing_naturalgas',
         		__( 'Improvements:', 'agentpress' )       	=> '_listing_improvements',
+        		__( 'Improvement Allowance:', 'agentpress' )       	=> '_listing_imprvallowance',
         		__( 'Lease Rate:', 'agentpress' )       	=> '_listing_leaserate',
+        		__( 'Net Expenses:', 'agentpress' )       	=> '_listing_nets',
         		__( 'Available:', 'agentpress' )       		=> '_listing_available',
-        		__( 'Other:', 'agentpress' )    		=> '_listing_other', 
+        		__( 'Other:', 'agentpress' )    			=> '_listing_other',
 			), 
 			'col2' => array( 
         		__( 'Price:', 'agentpress' )   => '_listing_price', 

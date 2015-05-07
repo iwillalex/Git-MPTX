@@ -74,6 +74,7 @@ function agentpress_property_details_filter( $details ) {
     $details['col1'] = array( 
      	__( 'Use:', 'agentpress' )       			=> '_listing_use',
         __( 'Land Area:', 'agentpress' )       		=> '_listing_land',
+        __( 'Unit Size:', 'agentpress' )       		=> '_listing_unitsize',
         __( 'Frontage:', 'agentpress' )       		=> '_listing_frontage',
         __( 'Jurisdiction:', 'agentpress' )       	=> '_listing_jurisdiction',
         __( 'Zoning:', 'agentpress' )       		=> '_listing_zoning',
@@ -84,7 +85,9 @@ function agentpress_property_details_filter( $details ) {
         __( 'Electric:', 'agentpress' )      		=> '_listing_electric',
         __( 'Natural Gas:', 'agentpress' )       	=> '_listing_naturalgas',
         __( 'Improvements:', 'agentpress' )       	=> '_listing_improvements',
+        __( 'Improvement Allowance:', 'agentpress' )       	=> '_listing_imprvallowance',
         __( 'Lease Rate:', 'agentpress' )       	=> '_listing_leaserate',
+        __( 'Net Expenses:', 'agentpress' )       	=> '_listing_nets',
         __( 'Available:', 'agentpress' )       		=> '_listing_available',
         __( 'Other:', 'agentpress' )    			=> '_listing_other',
     );
