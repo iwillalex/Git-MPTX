@@ -186,7 +186,7 @@ textarea:focus,
 }
 
 a {
-	color: #0274be;
+	color: #064f80;
 	text-decoration: none;
 }
 
@@ -403,7 +403,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #0274be;
+	background-color: #064f80;
 	border: none;
 	color: #fff;
 	cursor: pointer;
@@ -492,7 +492,7 @@ Structure and Layout
 }
 
 .site-inner {
-	background-color: #f5f5f5;
+	background-color: #f7f7f7;
 	clear: both;
 	padding-top: 40px;
 }
@@ -659,7 +659,7 @@ Common Classes
 --------------------------------------------- */
 
 .breadcrumb {
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #fff;
 	font-size: 14px;
 	margin: -40px 0 40px;
@@ -738,7 +738,7 @@ Common Classes
 
 .entry-title a:hover,
 .featured-content .entry .entry-title a:hover {
-	color: #0274be;
+	color: #064f80;
 }
 
 .widget-title {
@@ -749,7 +749,7 @@ Common Classes
 .full-width .widget-title,
 .property-search .widget-title,
 .sidebar .widget-title {
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #fff;
 	font-weight: 700;
 	padding: 20px 40px;
@@ -776,7 +776,7 @@ Common Classes
 
 .home-featured .widget.widget_text .widget-title {
 	background: none;
-	color: #0274be;
+	color: #064f80;
 	font-size: 36px;
 	line-height: 1.1;
 	padding: 0;
@@ -970,7 +970,7 @@ Plugins
 	-ms-transform:     rotate(0deg);
 	-o-transform:      rotate(0deg);
 	-webkit-transform: rotate(0deg);
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #fff;
 	font-size: 9px;
 	font-weight: 700;
@@ -995,7 +995,7 @@ Plugins
 }
 
 .featured-listings .listing a.more-link {
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #ffffff;
 }
 
@@ -1305,7 +1305,7 @@ Site Navigation
 .nav-secondary .genesis-nav-menu > li:hover > a,
 .nav-secondary .genesis-nav-menu a:hover {
 	background: none;
-	color: #0274be;
+	color: #064f80;
 }
 
 /* Responsive Menu
@@ -1452,7 +1452,7 @@ Content Area
 }
 
 .full-width .featured-content .more-from-category a {
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #fff;
 	clear: both;
 	display: block;
@@ -1509,7 +1509,7 @@ Content Area
 }
 
 .home-middle-1 .entry a {
-	color: #0274be;
+	color: #064f80;
 }
 
 .home-middle-1 .entry a:hover {
@@ -1793,7 +1793,7 @@ Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background-color: #fff;
+	background-color: #f5f5f5;
 	clear: both;
 }
 
@@ -1806,7 +1806,7 @@ Footer Widgets
 }
 
 .footer-widgets a:hover {
-	color: #0274be;
+	color: #064f80;
 }
 
 .footer-widgets li {
@@ -1835,7 +1835,7 @@ Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #f5f5f5;
+	background-color: #ebebeb;
 	font-size: 16px;
 	padding: 40px 0;
 	text-align: center;
@@ -1846,7 +1846,7 @@ Site Footer
 }
 
 .site-footer a:hover {
-	color: #0274be;
+	color: #064f80;
 }
 
 .site-footer p {
@@ -2179,7 +2179,7 @@ Theme Colors
 }
 
 .listing-text {
-	background: #0274be;
+	background: #064f80;
 	clear: both;
 	color: #ffffff;
 	font-size: 12px;
@@ -2204,7 +2204,7 @@ Theme Colors
 }
 
 .listing-wrap .more-link {
-	background-color: #0274be;
+	background-color: #064f80;
 	color: #ffffff;
 	font-size: 12px;
 	font-weight: bold;
